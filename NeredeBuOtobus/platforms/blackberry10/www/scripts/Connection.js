@@ -1,7 +1,6 @@
 ﻿
 var Connection = {
     doAjaxReq: function (data) {
-
         var parameterObject = {
             fnc: "DuraktanGeçecekOtobüsler",
             prm: "",

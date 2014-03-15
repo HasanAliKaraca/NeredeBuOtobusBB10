@@ -33,7 +33,11 @@ var Application = {
 
             // Fires "after" styling is applied and "after" the screen is inserted in the DOM
             ondomready: function (element, id) {
-                $("#txtDurakNo").focus()
+                $("#txtDurakNo").val(localStorage.getItem("lastDurakNo"));
+                $("#txtHatNo").val(localStorage.getItem("lastHatNo"));
+                $("#txtDurakNo").focus();
+
+                
             }
         });
 

@@ -12,7 +12,7 @@
 
     },
     online: function () {
-        Connection.showData(); //implement this function
+        App.getBusInfo(); //implement this function
     },
 
     check: function () {
