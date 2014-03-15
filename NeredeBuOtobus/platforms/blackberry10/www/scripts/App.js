@@ -42,10 +42,8 @@ var App = {
 	},
 
 	showBusInfo: function (data) {
-		console.log(data);
-		//extracted
 
-		var i,
+	    var i,
 		listItem,
 		items = [],
 		detay,
