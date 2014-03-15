@@ -1,11 +1,17 @@
 ﻿
 var Timer = {
+    working: false,
+
     counter: null,
-    startTimer: function () {
-        this.stopTimer();
+
+    start: function () {
+        this.working = true;
+        this.stop();
         this.counter = setInterval(App.getBusInfo, 30000); //App.getBusInfo() functionını 30saniyede bir çalıştır
     },
-    stopTimer: function () {
+
+    stop: function () {
         clearInterval(this.counter);
+        this.working = false;
     }
 };

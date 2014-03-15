@@ -8,6 +8,23 @@ var Connection = {
             durak: data.durakNo
         }
 
+        if (this.myIp == null && this.myIp == "") {
+            this.loadMyIp();
+
+            var timeStamp = Date.now();
+
+            //10sec wait
+            while (Date.now - timeStamp < 10000) { 
+                
+            }
+            if (this.myIp == null && this.myIp == "") {
+                
+                alert("şu anki ipiniz alınamadığı için işlem gerçekleştirilemiyor!");
+                return;
+            }
+
+        }
+
         var ajaxCID = Connection.myIp;
         var ajaxAPP = 'OtobusNerede';
 
@@ -30,16 +47,23 @@ var Connection = {
     },
     returnData: function (data, textStatus, jqXHR) {
         console.log("ajax success");
-        //gelen data yanlış şekillendirilmiş: "{'Err': '','Msg': '','Row': 0,'Tbl': []}"
-        //bu datada parse edebilmek için ' karakterleri " döndürülmeli.
-        var correctedString = data.replace(/'/g , '"');
 
-        //string to json
-        var jsonObject = $.parseJSON(correctedString);
+        try {
+            //gelen data yanlış şekillendirilmiş: "{'Err': '','Msg': '','Row': 0,'Tbl': []}"
+            //bu datada parse edebilmek için ' karakterleri " döndürülmeli.
+            var correctedString = data.replace(/'/g, '"');
+
+            //string to json
+            var jsonObject = $.parseJSON(correctedString);
+
+        } catch (e) {
+            console.warn(e);
+            return null;
+        }
 
         App.showBusInfo(jsonObject);
     },
-    
+
     myIp: "",
     loadMyIp: function () {
 

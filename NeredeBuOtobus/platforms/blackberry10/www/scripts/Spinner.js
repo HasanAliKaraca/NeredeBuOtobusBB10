@@ -1,10 +1,9 @@
 ﻿/* ===========================================================================================
  *	SPINNERS - https://github.com/blackberry/bbUI.js/wiki/Activity-Indicator
  * ======================================================================================== */
-// spinner divs in spinners.html
 
 var Spinner = {
-    'visible': false,
+    visible: false,
 
     off: function () {
         document.getElementById('spinner').style.display = 'none';
@@ -13,7 +12,7 @@ var Spinner = {
     },
 
     on: function () {
-       document.getElementById('spinner').style.display = 'block';
+        document.getElementById('spinner').style.display = 'block';
         Spinner.visible = true;
     }
 };

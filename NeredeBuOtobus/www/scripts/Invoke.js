@@ -1,10 +1,7 @@
 ﻿
-
 /* ==============================================================================================
  *  INVOCATION - https://developer.blackberry.com/html5/documentation/invoking_core_apps.html
  * =========================================================================================== */
-
-
 
 var Invoke = {
 
@@ -48,6 +45,18 @@ var Invoke = {
         }
     },
 
+    appworldOpenMyVendorPage: function () {
+        blackberry.invoke.invoke({
+            target: 'sys.appworld',
+            action: 'bb.action.OPEN',
+            uri: 'appworld://vendor/54824'
+        },
+            // success
+            function () { console.log("success"); },
+
+            // error
+            function () { console.log("error"); });
+    },
     /* 
     
     //TODOS
@@ -103,4 +112,9 @@ var Invoke = {
     }
     
     */
+
 };
+
+
+
+
