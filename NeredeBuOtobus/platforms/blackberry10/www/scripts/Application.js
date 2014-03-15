@@ -33,7 +33,7 @@ var Application = {
 
             // Fires "after" styling is applied and "after" the screen is inserted in the DOM
             ondomready: function (element, id) {
-                
+                $("#txtDurakNo").focus()
             }
         });
 

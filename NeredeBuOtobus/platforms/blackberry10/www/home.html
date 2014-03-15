@@ -1,29 +1,32 @@
-﻿<div data-bb-type="screen" data-bb-scroll-effect="off" data-bb-effect="fade" data-bb-indicator="true">
+﻿<div data-bb-type="screen" data-bb-scroll-effect="off" data-bb-indicator="true">
 
-    <div data-bb-type="title" data-bb-caption="Nerede bu otobüs?"></div>
+    <!--<div data-bb-type="title" data-bb-caption="Nerede bu otobüs?"></div>-->
 
-    <div data-bb-type="grid-layout">
-        <div data-bb-type="row">
-            <div data-bb-type="label">Durak Numarası:</div>
-            <input id="txtDurakNo" type="number" value="" />
-        </div>
-        <div data-bb-type="row">
-            <div data-bb-type="label">
-                Hat Numarası(isteğe bağlı):
+    <div data-bb-type="round-panel">
+        <div data-bb-type="label-control-container">
+            <div data-bb-type="row">
+                <div data-bb-type="label">Durak No</div>
+                <input id="txtDurakNo" type="number" value="" />
             </div>
-            <input id="txtHatNo" type="number" value="" />
+            <div data-bb-type="row">
+                <div data-bb-type="label">Hat No (opsiyonel)</div>
+                <input id="txtHatNo" type="number" value="" />
+            </div>
         </div>
-        <div data-bb-type="row">
-            <div data-bb-type="button" data-bb-style="stretch" onclick="getBusInfo()">Otobüs nerede?</div>
-        </div>
+    </div>
+
+    <div data-bb-type="button" data-bb-style="stretch" onclick="App.getBusInfo()">Göster</div>
+
+    <div id="spinner" style="text-align:center;padding-top:50px;padding-bottom:50px;display:none;">
+        <div data-bb-type="activity-indicator" data-bb-size="large" style="margin: 0 auto 0 auto;"></div>
     </div>
 
     <div data-bb-type="round-panel">
-        <div id="busList" data-bb-type="scroll-panel" style="height:450px">
-
-            
+        <div id="pnlBus" data-bb-type="scroll-panel" style="height:570px">
+            <div id="dataList" data-bb-type="image-list" data-bb-image-effect="fade" data-bb-images="none"></div>
         </div>
     </div>
+ 
     <div data-bb-type="action-bar">
 
         <div data-bb-type="action" data-bb-style="button" data-bb-overflow="true" data-bb-img="images/icons_white/ic_info.png" onclick="bb.pushScreen('about.html', 'aboutScr')">Hakkında</div>

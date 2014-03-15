@@ -7,16 +7,13 @@ var Spinner = {
     'visible': false,
 
     off: function () {
-        var el = document.getElementById('spinner');
-        el.style.display = 'none';
+        document.getElementById('spinner').style.display = 'none';
         Spinner.visible = false;
 
     },
 
     on: function () {
-        var el = document.getElementById('spinner');
-        el.style.display = 'block';
-
+       document.getElementById('spinner').style.display = 'block';
         Spinner.visible = true;
     }
 };

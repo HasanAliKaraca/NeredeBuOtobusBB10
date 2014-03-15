@@ -31,8 +31,16 @@ var Connection = {
     },
     returnData: function (data, textStatus, jqXHR) {
         console.log("ajax success");
-        App.showBusInfo(data);
+        //gelen data yanlış şekillendirilmiş: "{'Err': '','Msg': '','Row': 0,'Tbl': []}"
+        //bu datada parse edebilmek için ' karakterleri " döndürülmeli.
+        var correctedString = data.replace(/'/g , '"');
+
+        //string to json
+        var jsonObject = $.parseJSON(correctedString);
+
+        App.showBusInfo(jsonObject);
     },
+    
     myIp: "",
     loadMyIp: function () {
 
