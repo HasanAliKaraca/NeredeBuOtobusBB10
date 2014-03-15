@@ -17,10 +17,15 @@
 
     check: function () {
         var con = blackberry.connection.type
+        console.log("con: "+ con);
         if (con == "none") {
             console.log("internet is offline");
 
             this.offline();
+        }
+        else if (con === "wifi" || con === "4g" || con === "3g" || con === "2g" || con === "vpn") {
+            //take ip
+            Connection.loadMyIp();
         }
     },
 

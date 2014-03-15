@@ -17,8 +17,12 @@ var App = {
 
         return dataObject;
     },
-    buttonClicked: function () {
+    getBusInfo: function () {
         var dataObject = this.getValues();
         Connection.doAjaxReq(dataObject);
+    },
+    showBusInfo: function (data) {
+        console.log(data);
+        alert("data geldii");
     }
 };

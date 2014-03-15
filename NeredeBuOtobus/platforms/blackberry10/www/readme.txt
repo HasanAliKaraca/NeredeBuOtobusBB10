@@ -3,8 +3,12 @@
 used webworks 2.0 gold plugins:
 
 com.blackberry.connection
+com.blackberry.invoke
+com.blackberry.invoke.card
 com.blackberry.ui.dialog
 
-//with commands
+//from cmd
 webworks plugin add com.blackberry.connection
+webworks plugin add com.blackberry.invoke
+webworks plugin add com.blackberry.invoke.card
 webworks plugin add com.blackberry.ui.dialog

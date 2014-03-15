@@ -16,7 +16,6 @@ var Application = {
         document.addEventListener('online', ConnectionStatus.online, false);
     },
 
-
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
@@ -34,13 +33,11 @@ var Application = {
 
             // Fires "after" styling is applied and "after" the screen is inserted in the DOM
             ondomready: function (element, id) {
-                App.bindEvents();
                 
             }
         });
 
         App.startApplication();
-
 
     },
 

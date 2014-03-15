@@ -8,6 +8,7 @@
   <content src="index.html"/>
   <icon src="images/icon.png"/>
   <access uri="http://www.ego.gov.tr/" subdomains="true"/>
+  <access uri="http://jsonip.com" subdomains="true"/>
   <preference name="AutoHideSplashScreen" value="true"/>
   <preference name="ChildBrowser" value="enable"/>
   <preference name="DiskCache" value="disable"/>

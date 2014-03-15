@@ -16,7 +16,6 @@ var Application = {
         document.addEventListener('online', ConnectionStatus.online, false);
     },
 
-
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'

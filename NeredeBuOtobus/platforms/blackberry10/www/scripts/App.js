@@ -9,11 +9,20 @@ var App = {
         bb.pushScreen('home.html', 'homeScr');
 
     },
-    bindEvents: function () {
-        $("#btnShow").onclick = function () {
-            alert();
-        };
+    getValues: function () {
+        var durakNo = $("#txtDurakNo").val();
+        var hatNo = $("#txtHatNo").val();
 
-        bb.refresh();
+        var dataObject = { durakNo: durakNo, hatNo: hatNo };
+
+        return dataObject;
     },
+    getBusInfo: function () {
+        var dataObject = this.getValues();
+        Connection.doAjaxReq(dataObject);
+    },
+    showBusInfo: function (data) {
+        console.log(data);
+        alert("data geldii");
+    }
 };
