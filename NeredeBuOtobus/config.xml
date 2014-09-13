@@ -1,5 +1,5 @@
 <widget id="NeredeBuOtobus" 
-  xmlns:rim="http://www.blackberry.com/ns/widgets" version="1.0.0.0" 
+  xmlns:rim="http://www.blackberry.com/ns/widgets" version="2.1.0.0" 
   xmlns="http://www.w3.org/ns/widgets" 
   xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Nerede bu otobüs?</name>
