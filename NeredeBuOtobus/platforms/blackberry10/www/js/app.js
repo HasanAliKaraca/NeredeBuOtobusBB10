@@ -1,121 +1,118 @@
+﻿
+var App = {
+	startApplication: function () {
+
+		//check if the internet is offline
+		ConnectionStatus.check();
+
+		// load the first screen here
+		bb.pushScreen('home.html', 'homeScr');
+
+	},
+
+	getValues: function () {
+		var durakNo = $("#txtDurakNo").val();
+		if (durakNo === "") {
+			var message = "Lütfen bir durak numarası giriniz";
+			blackberry.ui.dialog.standardAskAsync(message, blackberry.ui.dialog.D_OK, function () { }, { title: "Durak No" })
+			return null;
+		}
+
+		var hatNo = $("#txtHatNo").val();
+
+		localStorage.setItem("lastDurakNo", durakNo);
+		localStorage.setItem("lastHatNo", hatNo);
+
+		var dataObject = { durakNo: durakNo, hatNo: hatNo };
+		this.values = dataObject;
+		return dataObject;
+	},
+	values: null,
+	getBusInfo: function () {
+
+		//empty datalist
+		var dataList = document.getElementById('dataList');
+		dataList.clear();
+
+		//show loading
+		Spinner.on();
+
+		var dataObject = App.getValues();
+		Connection.doAjaxReq(dataObject);
+	},
+
+	showBusInfo: function (data) {
+
+	    var i,
+		listItem,
+		items = [],
+		detay,
+		kalanDk,
+		dataList = document.getElementById('dataList');
+
+		//hatNo girilmişse
+		if (this.values != null && this.values.hatNo != "") {
+
+			var hatNo = this.values.hatNo;
 
 
-var Application = {
+			for (var i = 0; i < data.Row; i++) {
+				var record = data.Tbl[i];
+				if (record.kodu === hatNo) {
+					createListItem(record);
+					items.push(listItem);
+					break;
+				}
+			}
+		}
 
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
+			//hatNo girilmemişse
+		else {
+			data.Tbl.forEach(function (o) {
+				createListItem(o);
+				items.push(listItem);
+			});
+		}
 
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
+		//helper functions record=data.Tbl bir tablo objesi yani
+		function findKalanDk(record) {
+			var detay = record.detay;
+			var firstPos;
+			var lastPos;
 
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        Application.receivedEvent('deviceready');
+			if (detay.indexOf("<br />") != -1) {
+				firstPos = detay.indexOf("<br />") + 6;
+				lastPos = detay.lastIndexOf("<br />");
+			}
+			else if (detay.indexOf("<br/>") != -1) {
+				firstPos = detay.indexOf("<br/>") + 5;
+				lastPos = detay.lastIndexOf("<br/>");
+			}
+			else {
+				console.error("hata!! api de 'detay' parametresi değişmiş olabilir");
+			}
 
+			kalanDk = detay.substring(firstPos, lastPos);
+			return kalanDk;
+		};
+		function createListItem(record) {
 
-        bb.init({
-            actionBarDark: true,
-            controlsDark: true,
-            listsDark: false,
+			listItem = document.createElement('div');
+			listItem.setAttribute('data-bb-type', 'item');
+			listItem.setAttribute('data-bb-title', 'Hat No: '+ record.kodu);
+			listItem.setAttribute('data-bb-accent-text', '');//sağdaki text
 
-            // Fires "before" styling is applied and "before" the screen is inserted in the DOM
-            onscreenready: function(element, id) {},
+			var kalanDk = findKalanDk(record);
+			listItem.innerHTML = kalanDk;
+		};
 
-            // Fires "after" styling is applied and "after" the screen is inserted in the DOM
-            ondomready: function(element, id) {}
-        });
+		// Remove our waiting and refresh the list
+		Spinner.off();
 
-        try {
-            // register with bbm
-            Bbm.register();
-            // setup active frame / window cover
-            App.ui.windowCover.setup('local:///images/cover.png');
-        } catch (e) {
-            console.log('BBM / Window Covers will not work in the browser. On device only.');
-        }
+		dataList.refresh(items);
 
-
-        // start the app
-        bb.pushScreen('home.html', 'home');
-
-        // show welcome message
-        welcome();
+		Timer.start();
+	},
 
 
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        console.log('Received Event: ' + id);
-    }
 };
-
-
-
-// filepicker (async)
-
-function pickFile() {
-    Invoke.utils.filePicker(function(path) {
-            Toast.regular('Picked: ' + path, 3000);
-        },
-
-        function(reason) {
-            Toast.regular('Card canceled: ' + reason);
-        },
-
-        function(error) {
-            console.log(error);
-        });
-}
-
-// camera (async)
-
-function takePhoto() {
-    Invoke.utils.camera(function(path) {
-            Toast.regular('Photo: ' + path, 3000);
-        },
-
-        function(reason) {
-            Toast.regular('Card canceled: ' + reason);
-        },
-
-        function(error) {
-            console.log(error);
-        });
-}
-
-// sample toast button callback
-
-function toastCallback() {
-    alert('In the callback!');
-}
-
-// spinner usage
-
-function spinner(size) {
-    // hide the current spinner, if it's visible
-    Spinner.off();
-    Spinner.on(size);
-}
-
-// show a welcome message
-
-function welcome() {
-    Toast.regular('Welcome to the BFB Sample!', 2000);
-    setTimeout(function() {
-        Toast.regular('Swipe down to see the App Menu!', 2000);
-        setTimeout(function() {
-            Toast.regular('Minimize the app to see the Window Cover', 2300);
-        }, 2300);
-    }, 2300);
-}

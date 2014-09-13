@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<div style="background-color: #f5f5f5;" data-bb-type="screen" data-bb-effect="slide-left" data-bb-scroll-effect="off" data-bb-indicator="true">
+﻿<div style="background-color: #f5f5f5;" data-bb-type="screen" data-bb-effect="slide-left" data-bb-scroll-effect="off" data-bb-indicator="true">
 
     <div data-bb-type="round-panel">
         <div data-bb-type="label-control-container">
@@ -14,7 +13,7 @@
         </div>
     </div>
 
-    <div data-bb-type="button" data-bb-style="stretch" onclick="App.getBusInfo()">G�ster</div>
+    <!--<div data-bb-type="button" data-bb-style="stretch" onclick="App.getBusInfo()">Göster</div>-->
 
     <div id="spinner" style="text-align:center;padding-top:50px;padding-bottom:50px;display:none;">
         <div data-bb-type="activity-indicator" data-bb-size="large" style="margin: 0 auto 0 auto;"></div>
@@ -41,8 +40,11 @@
         <div onclick="bb.pushScreen('toasts.html', 'toasts');" data-bb-type="action" data-bb-style="tab" data-bb-overflow="true" data-bb-img="images/icons/toast.png">Toasts</div>
         <div onclick="bb.pushScreen('spinners.html', 'spinners');" data-bb-overflow="true" data-bb-type="action" data-bb-style="tab" data-bb-selected="true" data-bb-img="images/icons/spinner.png">Spinners</div>
         <!-- actions -->
-        <div onclick="welcome();" data-bb-type="action" data-bb-style="button" data-bb-img="images/icons/welcome.png">Show Welcome</div>
+        <div onclick="App.getBusInfo()" data-bb-type="action" data-bb-img="images/icons/ic_reload.png" data-bb-style="button">Getir</div>
+
+        <!--<div onclick="welcome();" data-bb-type="action" data-bb-style="button"  data-bb-img="images/icons/welcome.png">Show Welcome</div>-->
+
         <!-- action overflow -->
-        <div onclick="welcome();" data-bb-type="action" data-bb-style="button" data-bb-overflow="true" data-bb-img="images/icons/welcome.png">Show Welcome</div>
+        <!--<div onclick="welcome();" data-bb-type="action" data-bb-style="button" data-bb-overflow="true" data-bb-img="images/icons/welcome.png">Show Welcome</div>-->
     </div>
 </div>

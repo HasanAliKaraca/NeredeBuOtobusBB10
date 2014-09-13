@@ -39,7 +39,7 @@ var Connection = {
             success: Connection.returnData,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.warn("error: " + errorThrown);
-
+                alert("Server hata döndürdü. Lütfen tekrar deneyiniz.");
                 ConnectionStatus.check();
             }
         });

@@ -24,7 +24,7 @@ var ConnectionStatus = {
     },
 
     check: function () {
-        var con = blackberry.connection.type
+        var con = blackberry.connection.type;
         console.log("con: " + con);
         if (con == "none") {
             console.log("internet is offline");

@@ -36,10 +36,17 @@ var Application = {
                 $("#txtDurakNo").val(localStorage.getItem("lastDurakNo"));
                 $("#txtHatNo").val(localStorage.getItem("lastHatNo"));
                 $("#txtDurakNo").focus();
-
-                
             }
         });
+
+        try {
+            // register with bbm
+            Bbm.register();
+            // setup active frame / window cover
+            App.ui.windowCover.setup('local:///images/cover.png');
+        } catch (e) {
+            console.log('BBM / Window Covers will not work in the browser. On device only.');
+        }
 
         App.startApplication();
 
@@ -50,3 +57,62 @@ var Application = {
         console.log('Received Event: ' + id);
     },
 };
+
+
+// filepicker (async)
+
+function pickFile() {
+    Invoke.utils.filePicker(function (path) {
+        Toast.regular('Picked: ' + path, 3000);
+    },
+
+        function (reason) {
+            Toast.regular('Card canceled: ' + reason);
+        },
+
+        function (error) {
+            console.log(error);
+        });
+}
+
+// camera (async)
+
+function takePhoto() {
+    Invoke.utils.camera(function (path) {
+        Toast.regular('Photo: ' + path, 3000);
+    },
+
+        function (reason) {
+            Toast.regular('Card canceled: ' + reason);
+        },
+
+        function (error) {
+            console.log(error);
+        });
+}
+
+// sample toast button callback
+
+function toastCallback() {
+    alert('In the callback!');
+}
+
+// spinner usage
+
+function spinner(size) {
+    // hide the current spinner, if it's visible
+    Spinner.off();
+    Spinner.on(size);
+}
+
+// show a welcome message
+
+function welcome() {
+    Toast.regular('Welcome to the BFB Sample!', 2000);
+    setTimeout(function () {
+        Toast.regular('Swipe down to see the App Menu!', 2000);
+        setTimeout(function () {
+            Toast.regular('Minimize the app to see the Window Cover', 2300);
+        }, 2300);
+    }, 2300);
+}

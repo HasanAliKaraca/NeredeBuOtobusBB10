@@ -6,6 +6,8 @@
     <feature name="com.blackberry.ui.cover" value="com.blackberry.ui.cover" />
     <feature name="com.blackberry.ui.toast" value="com.blackberry.ui.toast" />
     <feature name="com.blackberry.utils" />
+    <feature name="com.blackberry.jpps" />
+    <feature name="com.blackberry.connection" value="com.blackberry.connection" />
     <name>Nerede bu otobüs?</name>
     <author href="http://www.hasanalikaraca.com/" rim:copyright="Copyright 2014 Hasan Ali Karaca">Hasan Ali Karaca</author>
     <description>Resmi olmayan, Ankara için EGO uygulamasıdır</description>

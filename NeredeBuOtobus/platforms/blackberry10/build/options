@@ -18,7 +18,6 @@ C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\home.html
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\index.html
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\invoke.html
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\n_index.html
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\readme.txt
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\settings.html
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\spinners.html
@@ -26,6 +25,7 @@ C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\wwe
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\_about.html
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\_home.html
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\_index.html
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\chrome\frameworkModules.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\chrome\index.html
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\chrome\require.js
@@ -35,6 +35,11 @@ C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\css\bbui-min.css
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\css\index.css
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\css\style.css
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\fonts\fontawesome-webfont.eot
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\fonts\fontawesome-webfont.svg
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\fonts\fontawesome-webfont.ttf
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\fonts\fontawesome-webfont.woff
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\fonts\FontAwesome.otf
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icon.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\splash-1280x720.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\splash-1280x768.png
@@ -47,6 +52,7 @@ C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons\filepicker.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons\help.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons\home.png
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons\ic_reload.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons\info.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons\invite.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons\map.png
@@ -62,7 +68,10 @@ C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons_white\ic_browser.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons_white\ic_info.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons_white\ic_rotate.png
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\app.js
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\App.js
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\App.min.js
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\App.min.js.map
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\appl.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\Application.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\Application.min.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\Application.min.js.map
@@ -82,13 +91,11 @@ C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\Timer.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\Timer.min.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\Timer.min.js.map
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\_App.js
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\_App.min.js
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\_App.min.js.map
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\lib\bbui-min.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\lib\jquery-1.9.1.min.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\lib\LICENSE
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.app\www\client.js
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.connection\www\client.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.invoke\www\btoa.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.invoke\www\client.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.invoke.card\www\btoa.js

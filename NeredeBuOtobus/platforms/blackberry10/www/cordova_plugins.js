@@ -48,6 +48,13 @@ module.exports = [
         "clobbers": [
             "blackberry.ui.toast"
         ]
+    },
+    {
+        "file": "plugins/com.blackberry.connection/www/client.js",
+        "id": "com.blackberry.connection.client",
+        "clobbers": [
+            "blackberry.connection"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -58,7 +65,9 @@ module.exports.metadata =
     "com.blackberry.invoke.card": "1.0.0",
     "com.blackberry.ui.cover": "1.0.0",
     "com.blackberry.ui.toast": "1.0.0",
-    "com.blackberry.utils": "1.0.0"
+    "com.blackberry.utils": "1.0.0",
+    "com.blackberry.connection": "1.0.0",
+    "com.blackberry.jpps": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

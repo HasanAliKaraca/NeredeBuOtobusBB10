@@ -31,6 +31,14 @@
                         {
                             "xml": "<feature name=\"com.blackberry.utils\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.jpps\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.connection\" value=\"com.blackberry.connection\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -55,7 +63,14 @@
         },
         "com.blackberry.utils": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "com.blackberry.connection": {
+            "PACKAGE_NAME": "NeredeBuOtobus"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "com.blackberry.jpps": {
+            "PACKAGE_NAME": "NeredeBuOtobus"
+        }
+    }
 }
