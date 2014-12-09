@@ -57,6 +57,7 @@ var Connection = {
             var jsonObject = $.parseJSON(correctedString);
 
         } catch (e) {
+            alert(e);
             console.warn(e);
             return null;
         }

@@ -41,6 +41,7 @@ var Application = {
             // setup active frame / window cover
             App.ui.windowCover.setup('local:///images/cover.png');
         } catch (e) {
+            alert(e);
             console.log('BBM / Window Covers will not work in the browser. On device only.');
         }
 

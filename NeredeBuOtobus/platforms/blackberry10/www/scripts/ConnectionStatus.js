@@ -12,6 +12,7 @@ var ConnectionStatus = {
                 Timer.stop();
             }
         } catch (e) {
+            alert(e);
             console.warn("Exception in standardDialog: " + e);
         }
 
