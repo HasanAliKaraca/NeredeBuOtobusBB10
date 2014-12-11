@@ -39,6 +39,10 @@
                         {
                             "xml": "<feature name=\"com.blackberry.connection\" value=\"com.blackberry.connection\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"com.blackberry.ui.dialog\" value=\"com.blackberry.ui.dialog\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -65,6 +69,9 @@
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "com.blackberry.connection": {
+            "PACKAGE_NAME": "NeredeBuOtobus"
+        },
+        "com.blackberry.ui.dialog": {
             "PACKAGE_NAME": "NeredeBuOtobus"
         }
     },

@@ -36,19 +36,34 @@ var Application = {
                 $("#txtDurakNo").val(localStorage.getItem("lastDurakNo"));
                 $("#txtHatNo").val(localStorage.getItem("lastHatNo"));
                 $("#txtDurakNo").focus();
+
+                $("#txtDurakNo").keyup(function (event) {
+                    var durakNo = $("#txtDurakNo").val();
+                    localStorage.setItem("lastDurakNo", durakNo);
+                    if (event.keyCode == 13) {
+                        App.getBusInfo();
+                    }
+                });
+
+                $("#txtHatNo").keyup(function (event) {
+                    var hatNo = $("#txtHatNo").val();
+                    localStorage.setItem("lastHatNo", hatNo);
+                });
+
+
             }
         });
 
-        try {
-            // register with bbm
-          //  Bbm.register();
+        //try {
+        //    // register with bbm
+        //  //  Bbm.register();
 
-            // setup active frame / window cover
-            //App.ui.windowCover.setup('local:///images/cover.png');
-        } catch (e) {
-            alert(e);
-            console.log('BBM / Window Covers will not work in the browser. On device only.');
-        }
+        //    // setup active frame / window cover
+        //    //App.ui.windowCover.setup('local:///images/cover.png');
+        //} catch (e) {
+        //    alert(e);
+        //    console.log('BBM / Window Covers will not work in the browser. On device only.');
+        //}
 
         App.startApplication();
 

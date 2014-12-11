@@ -8,6 +8,7 @@
     <feature name="com.blackberry.utils" />
     <feature name="com.blackberry.jpps" />
     <feature name="com.blackberry.connection" value="com.blackberry.connection" />
+    <feature name="com.blackberry.ui.dialog" value="com.blackberry.ui.dialog" />
     <name>Nerede bu otobüs?</name>
     <author href="http://www.hasanalikaraca.com/" rim:copyright="Copyright 2014 Hasan Ali Karaca">Hasan Ali Karaca</author>
     <description>Resmi olmayan, Ankara için EGO uygulamasıdır</description>

@@ -55,6 +55,13 @@ module.exports = [
         "clobbers": [
             "blackberry.connection"
         ]
+    },
+    {
+        "file": "plugins/com.blackberry.ui.dialog/www/client.js",
+        "id": "com.blackberry.ui.dialog.client",
+        "clobbers": [
+            "blackberry.ui.dialog"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -67,6 +74,7 @@ module.exports.metadata =
     "com.blackberry.ui.toast": "1.0.0",
     "com.blackberry.utils": "1.0.0",
     "com.blackberry.connection": "1.0.0",
+    "com.blackberry.ui.dialog": "1.0.0",
     "com.blackberry.jpps": "1.0.0"
 }
 // BOTTOM OF METADATA
