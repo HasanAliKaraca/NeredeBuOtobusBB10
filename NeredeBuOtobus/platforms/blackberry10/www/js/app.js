@@ -43,32 +43,32 @@ var App = {
             return null;
         }
 
-        var homeScrExist = false;
+        var busInfoScrExist = false;
         $.each(bb.screens, function (index, item) {
             if (item.id == "busInfoScr") {
-                homeScrExist = true;
+                busInfoScrExist = true;
             }
         });
 
-        if (homeScrExist == false) {
-
+        if (busInfoScrExist == false) {
             bb.pushScreen('busInfo.html', 'busInfoScr');
         }
+        //show loading - ekran yüklendikten sonra çalıştırılması lazım
+        Spinner.on();
 
-
+        Connection.doAjaxReq(dataObject);
 
         //empty datalist
-        var dataList = $("#dataList"); //document.getElementById('dataList');
-        if (!dataList.html()) {
-            dataList.html("Yükleniyor..");
-        }
+        //var dataList = $("#dataList"); //document.getElementById('dataList');
+        //if (!dataList.html()) {
+        //    dataList.html("Yükleniyor..");
+        //}
 
         //dataList.clear();
 
-        //show loading
-        //Spinner.on();
 
-        Connection.doAjaxReq(dataObject);
+
+      //  Toast.regular('Yükleniyor..');
     },
 
     showBusInfo: function (data) {
@@ -150,7 +150,7 @@ var App = {
         };
 
         // Remove our waiting and refresh the list
-        // Spinner.off();
+        Spinner.off();
 
 
         var date = new Date();
@@ -167,9 +167,9 @@ var App = {
         var now = hour + ":" + min + ":" + sec;
         $("#lblLastUpdateTime").html("Son güncellenme: " + now);
 
-        console.log(data);
-        if ($.isEmptyObject(data)) {
-            var message = "Sonuç bulunamadı.";
+        //  console.log(data);
+        if ($.isEmptyObject(data) || data.Row < 1) {
+            var message = "Otobüs bulunamadı..";
             var title = "Sonuç";
             App.alert(message, title);
             return;

@@ -8,9 +8,9 @@ var ConnectionStatus = {
 
             blackberry.ui.dialog.customAskAsync("Devam edebilmek için Wi-Fi ya da mobil bir ağa bağlanın.", buttons, dialogCallBack, { title: "Internet bağlantısı yok" });
 
-            if (Timer.working==true) {
-                Timer.stop();
-            }
+            //if (Timer.working==true) {
+            //}
+            Timer.stop();
         } catch (e) {
             alert(e);
             console.warn("Exception in standardDialog: " + e);

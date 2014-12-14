@@ -14,11 +14,11 @@ var Connection = {
             var timeStamp = Date.now();
 
             //10sec wait
-            while (Date.now - timeStamp < 10000) { 
-                
+            while (Date.now - timeStamp < 10000) {
+
             }
             if (this.myIp == null && this.myIp == "") {
-                
+
                 alert("şu anki ipiniz alınamadığı için işlem gerçekleştirilemiyor!");
                 return;
             }
@@ -39,30 +39,41 @@ var Connection = {
             success: Connection.returnData,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.warn("error: " + errorThrown);
-                alert("Server hata döndürdü. Lütfen tekrar deneyiniz.");
+
+                App.alert("Bağlantı esnasında hata oluştu. Lütfen tekrar deneyiniz.", "Bağlantı hatası");
+
                 ConnectionStatus.check();
             }
         });
 
     },
     returnData: function (data, textStatus, jqXHR) {
-        console.log("ajax success");
+        //console.log("ajax success");
 
         try {
             //gelen data yanlış şekillendirilmiş: "{'Err': '','Msg': '','Row': 0,'Tbl': []}"
             //bu datada parse edebilmek için ' karakterleri " döndürülmeli.
             var correctedString = data.replace(/'/g, '"');
 
-            //string to json
-            var jsonObject = $.parseJSON(correctedString);
+            if (correctedString) {
+                //string to json
+                var jsonObject = $.parseJSON(correctedString);
+            }
+            else {
+                console.log("correctedString: " + correctedString);
+                throw "Data boş döndü!";
+            }
+
 
         } catch (e) {
-            alert(e);
+            // alert(e);
             console.warn(e);
+            Spinner.off();
             return null;
         }
 
         App.showBusInfo(jsonObject);
+
     },
 
     myIp: "",

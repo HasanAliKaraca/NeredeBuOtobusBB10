@@ -29,7 +29,9 @@ var Application = {
             listsDark: false,
 
             // Fires "before" styling is applied and "before" the screen is inserted in the DOM
-            onscreenready: function (element, id) { },
+            onscreenready: function (element, id, params) {
+
+            },
 
             // Fires "after" styling is applied and "after" the screen is inserted in the DOM
             ondomready: function (element, id) {
@@ -76,60 +78,63 @@ var Application = {
 };
 
 
-// filepicker (async)
+//// filepicker (async)
 
-function pickFile() {
-    Invoke.utils.filePicker(function (path) {
-        Toast.regular('Picked: ' + path, 3000);
-    },
+//function pickFile() {
+//    Invoke.utils.filePicker(function (path) {
+//        Toast.regular('Picked: ' + path, 3000);
+//    },
 
-        function (reason) {
-            Toast.regular('Card canceled: ' + reason);
-        },
+//        function (reason) {
+//            Toast.regular('Card canceled: ' + reason);
+//        },
 
-        function (error) {
-            console.log(error);
-        });
-}
+//        function (error) {
+//            console.log(error);
+//        });
+//}
 
-// camera (async)
+//// camera (async)
 
-function takePhoto() {
-    Invoke.utils.camera(function (path) {
-        Toast.regular('Photo: ' + path, 3000);
-    },
+//function takePhoto() {
+//    Invoke.utils.camera(function (path) {
+//        Toast.regular('Photo: ' + path, 3000);
+//    },
 
-        function (reason) {
-            Toast.regular('Card canceled: ' + reason);
-        },
+//        function (reason) {
+//            Toast.regular('Card canceled: ' + reason);
+//        },
 
-        function (error) {
-            console.log(error);
-        });
-}
+//        function (error) {
+//            console.log(error);
+//        });
+//}
 
-// sample toast button callback
+//// sample toast button callback
 
-function toastCallback() {
-    alert('In the callback!');
-}
+//function toastCallback() {
+//    alert('In the callback!');
+//}
 
-// spinner usage
+//// spinner usage
 
-function spinner(size) {
-    // hide the current spinner, if it's visible
-    Spinner.off();
-    Spinner.on(size);
-}
+//function spinner(size) {
+//    // hide the current spinner, if it's visible
+//    Spinner.off();
+//    Spinner.on(size);
+//}
 
-// show a welcome message
+//// show a welcome message
 
-function welcome() {
-    Toast.regular('Welcome to the BFB Sample!', 2000);
-    setTimeout(function () {
-        Toast.regular('Swipe down to see the App Menu!', 2000);
-        setTimeout(function () {
-            Toast.regular('Minimize the app to see the Window Cover', 2300);
-        }, 2300);
-    }, 2300);
-}
+//function welcome() {
+//    Toast.regular('Welcome to the BFB Sample!', 2000);
+//    setTimeout(function () {
+//        Toast.regular('Swipe down to see the App Menu!', 2000);
+//        setTimeout(function () {
+//            Toast.regular('Minimize the app to see the Window Cover', 2300);
+//        }, 2300);
+//    }, 2300);
+//}
+
+
+

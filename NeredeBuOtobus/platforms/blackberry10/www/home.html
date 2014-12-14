@@ -5,11 +5,11 @@
         <div data-bb-type="label-control-container">
             <div data-bb-type="row">
                 <div data-bb-type="label">Durak No</div>
-                <input id="txtDurakNo" type="number" placeholder="Durak Numarası" value="" onkeypress="" />
+                <input id="txtDurakNo" type="number" placeholder="Durak Numarası" value="" required title="*" pattern=".{5}" />
             </div>
             <div data-bb-type="row">
                 <div data-bb-type="label">Hat No (opsiyonel)</div>
-                <input id="txtHatNo" type="number" placeholder="Hat Numarası"  value="" />
+                <input id="txtHatNo" type="number" placeholder="Hat Numarası" value="" />
             </div>
         </div>
     </div>
@@ -26,7 +26,6 @@
             </div>
         </div>
     </div>-->
-
     <!--<div data-bb-type="button" data-bb-style="stretch" onclick="App.getBusInfo()">Göster</div>-->
     <!--<div data-bb-type="round-panel">-->
     <!--<div data-bb-type="grid-layout">
@@ -37,8 +36,8 @@
     <!-- app menu -->
     <div data-bb-type="menu">
         <!--<div onclick="bb.pushScreen('help.html', 'help');" data-bb-type="menu-item" data-bb-img="images/icons/help.png" data-bb-pin="left">Yardım</div>
-        <div onclick="bb.pushScreen('about.html', 'about');" data-bb-type="menu-item" data-bb-img="images/icons/info.png" data-bb-pin="center">Hakkında</div>
         <div onclick="bb.pushScreen('settings.html', 'settings');" data-bb-type="menu-item" data-bb-img="images/icons/settings.png" data-bb-pin="right">Ayarlar</div>-->
+        <div onclick="bb.pushScreen('about.html', 'about');" data-bb-type="menu-item" data-bb-img="images/icons/info.png" data-bb-pin="center">Hakkında</div>
     </div>
     <!-- action bar -->
     <div data-bb-type="action-bar">
@@ -57,6 +56,6 @@
     </div>
 
     <script>
-        
+
     </script>
 </div>
