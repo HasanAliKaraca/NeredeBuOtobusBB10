@@ -1,13 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="NeredeBuOtobus" version="1.0.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets">
-    <feature name="com.blackberry.connection" value="com.blackberry.connection" />
+<widget id="NeredeBuOtobus" version="2.1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets">
+    <feature name="com.blackberry.app" value="com.blackberry.app" />
     <feature name="com.blackberry.invoke" value="com.blackberry.invoke" />
     <feature name="com.blackberry.invoke.card" value="com.blackberry.invoke.card" />
-    <feature name="com.blackberry.jpps" />
-    <feature name="com.blackberry.ui.dialog" value="com.blackberry.ui.dialog" />
+    <feature name="com.blackberry.ui.cover" value="com.blackberry.ui.cover" />
+    <feature name="com.blackberry.ui.toast" value="com.blackberry.ui.toast" />
     <feature name="com.blackberry.utils" />
+    <feature name="com.blackberry.jpps" />
+    <feature name="com.blackberry.connection" value="com.blackberry.connection" />
+    <feature name="com.blackberry.ui.dialog" value="com.blackberry.ui.dialog" />
     <name>Nerede bu otobüs?</name>
-    <author href="http://www.hasanalikaraca.com/" rim:copyright="Copyright 2014 Hasan Ali Karaca">Hasan Ali Karaca</author>
+    <rim:splash src="images/splash-1280x768.png" />
+    <rim:splash src="images/splash-1280x720.png" />
+    <rim:splash src="images/splash-720x720.png" />
     <description>Resmi olmayan, Ankara için EGO uygulamasıdır</description>
     <content src="index.html" />
     <icon src="images/icon.png" />
@@ -20,7 +25,5 @@
     <preference name="Orientation" value="default" />
     <preference name="PopupBlocker" value="disable" />
     <preference name="WebSecurity" value="enable" />
-    <rim:splash src="images/splash-1280x768.png" />
-    <rim:splash src="images/splash-1280x720.png" />
-    <rim:splash src="images/splash-720x720.png" />
+    <author href="http://www.hasanalikaraca.com/" rim:copyright="Copyright 2014 Hasan Ali Karaca">Hasan Ali Karaca</author>
 </widget>

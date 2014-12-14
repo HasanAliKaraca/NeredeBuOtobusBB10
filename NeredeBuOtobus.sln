@@ -1,27 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "www", "http://localhost:56821", "{7DE39198-E3FB-4FE2-849E-3B8B15F90B13}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_56821"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\www\"
+		Debug.AspNetCompiler.PhysicalPath = "NeredeBuOtobus\www\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56821\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_56821"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\www\"
+		Release.AspNetCompiler.PhysicalPath = "NeredeBuOtobus\www\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56821\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\..\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\www\"
+		SlnRelativePath = "NeredeBuOtobus\www\"
 	EndProjectSection
 EndProject
 Global

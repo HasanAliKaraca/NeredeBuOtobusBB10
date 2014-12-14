@@ -1,8 +1,20 @@
-﻿<div data-bb-type="screen" data-bb-scroll-effect="off" data-bb-indicator="true">
-
-    <!--<div data-bb-type="title" data-bb-caption="Nerede bu otobüs?"></div>-->
+﻿<div style="background-color: #f5f5f5;" data-bb-type="screen" data-bb-effect="none" data-bb-scroll-effect="off" data-bb-indicator="true">
 
     <div data-bb-type="round-panel">
+        <div data-bb-type="panel-header">Durak Bilgileri</div>
+        <div data-bb-type="label-control-container">
+            <div data-bb-type="row">
+                <div data-bb-type="label">Durak No</div>
+                <input id="txtDurakNo" type="number" placeholder="Durak Numarası" value="" required title="*" pattern=".{5}" />
+            </div>
+            <div data-bb-type="row">
+                <div data-bb-type="label">Hat No (opsiyonel)</div>
+                <input id="txtHatNo" type="number" placeholder="Hat Numarası" value="" />
+            </div>
+        </div>
+    </div>
+
+    <!--<div data-bb-type="round-panel">
         <div data-bb-type="label-control-container">
             <div data-bb-type="row">
                 <div data-bb-type="label">Durak No</div>
@@ -13,23 +25,37 @@
                 <input id="txtHatNo" type="number" value="" />
             </div>
         </div>
-    </div>
-
-    <div data-bb-type="button" data-bb-style="stretch" onclick="App.getBusInfo()">Göster</div>
-
-    <div id="spinner" style="text-align:center;padding-top:50px;padding-bottom:50px;display:none;">
-        <div data-bb-type="activity-indicator" data-bb-size="large" style="margin: 0 auto 0 auto;"></div>
-    </div>
-
-    <div data-bb-type="round-panel">
+    </div>-->
+    <!--<div data-bb-type="button" data-bb-style="stretch" onclick="App.getBusInfo()">Göster</div>-->
+    <!--<div data-bb-type="round-panel">-->
+    <!--<div data-bb-type="grid-layout">
         <div id="pnlBus" data-bb-type="scroll-panel" style="height:570px">
             <div id="dataList" data-bb-type="image-list" data-bb-image-effect="fade" data-bb-images="none"></div>
         </div>
+    </div>-->
+    <!-- app menu -->
+    <div data-bb-type="menu">
+        <!--<div onclick="bb.pushScreen('help.html', 'help');" data-bb-type="menu-item" data-bb-img="images/icons/help.png" data-bb-pin="left">Yardım</div>
+        <div onclick="bb.pushScreen('settings.html', 'settings');" data-bb-type="menu-item" data-bb-img="images/icons/settings.png" data-bb-pin="right">Ayarlar</div>-->
+        <div onclick="bb.pushScreen('about.html', 'about');" data-bb-type="menu-item" data-bb-img="images/icons/info.png" data-bb-pin="center">Hakkında</div>
     </div>
- 
+    <!-- action bar -->
     <div data-bb-type="action-bar">
+        <!-- tabs -->
+        <!--<div onclick="bb.pushScreen('home.html', 'home');" data-bb-type="action" data-bb-overflow="true" data-bb-style="tab" data-bb-selected="true" data-bb-img="images/icons/home.png">Home</div>
+        <div onclick="bb.pushScreen('bbm.html', 'bbm');" data-bb-type="action" data-bb-overflow="true" data-bb-style="tab" data-bb-img="images/icons/bbm.png">BBM</div>
+        <div onclick="bb.pushScreen('invoke.html', 'invoke');" data-bb-type="action" data-bb-style="tab" data-bb-overflow="true" data-bb-img="images/icons/share.png">Invoke Apps</div>
+        <div onclick="bb.pushScreen('toasts.html', 'toasts');" data-bb-type="action" data-bb-style="tab" data-bb-overflow="true" data-bb-img="images/icons/toast.png">Toasts</div>
+        <div onclick="bb.pushScreen('spinners.html', 'spinners');" data-bb-overflow="true" data-bb-type="action" data-bb-style="tab" data-bb-selected="true" data-bb-img="images/icons/spinner.png">Spinners</div>-->
+        <!-- actions -->
+        <div onclick="App.getBusInfo()" data-bb-type="action" data-bb-img="images/icons/ic_reload.png" data-bb-style="button"></div>
 
-        <div data-bb-type="action" data-bb-style="button" data-bb-overflow="true" data-bb-img="images/icons_white/ic_info.png" onclick="bb.pushScreen('about.html', 'aboutScr')">Hakkında</div>
-        <div data-bb-type="action" data-bb-style="button" data-bb-overflow="true" data-bb-img="images/icons_white/ic_browser.png" onclick="Invoke.appworldOpenMyVendorPage()">Diğer Uygulamalarım</div>
+        <!--<div onclick="welcome();" data-bb-type="action" data-bb-style="button"  data-bb-img="images/icons/welcome.png">Show Welcome</div>-->
+        <!-- action overflow -->
+        <!--<div onclick="welcome();" data-bb-type="action" data-bb-style="button" data-bb-overflow="true" data-bb-img="images/icons/welcome.png">Show Welcome</div>-->
     </div>
+
+    <script>
+
+    </script>
 </div>
