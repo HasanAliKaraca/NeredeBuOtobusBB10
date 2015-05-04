@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="NeredeBuOtobus" version="2.1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets">
+<widget id="NeredeBuOtobus" version="2.2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets">
     <feature name="com.blackberry.utils" />
     <feature name="com.blackberry.connection" value="com.blackberry.connection" />
     <feature name="com.blackberry.invoke" value="com.blackberry.invoke" />
@@ -9,7 +9,7 @@
     <rim:splash src="images/splash-1280x768.png" />
     <rim:splash src="images/splash-1280x720.png" />
     <rim:splash src="images/splash-720x720.png" />
-    <description>Resmi olmayan, Ankara için EGO uygulamasıdır</description>
+    <description>Resmi olmayan, Ankara için EGO uygulamasıdır.</description>
     <content src="index.html" />
     <icon src="images/icon.png" />
     <access subdomains="true" uri="http://www.ego.gov.tr/" />
