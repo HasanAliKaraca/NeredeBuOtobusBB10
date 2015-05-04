@@ -361,14 +361,7 @@ var Connection = {
     returnData: function (data, textStatus, jqXHR) {       
 
         try {
-            //gelen data yanlış şekillendirilmiş: "{'Err': '','Msg': '','Row': 0,'Tbl': []}"
-            //bu datada parse edebilmek için ' karakterleri " döndürülmeli.
-            var correctedString = data.replace(/'/g, '"');
-
-            if (correctedString) {
-                //string to json
-                var jsonObject = $.parseJSON(correctedString);
-            }
+            //html dönecek otobusnerede
             else {
                 console.log("correctedString: " + correctedString);
                 throw "Data boş döndü!";
