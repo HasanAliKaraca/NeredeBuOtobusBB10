@@ -24,13 +24,13 @@ var utils = require('./utils'),
         pause: {
             event: "inactive",
             trigger: function () {
-                webview.executeJavascript("if (cordova) cordova.fireDocumentEvent('pause')");
+                webview.executeJavascript("if (typeof cordova !== 'undefined') cordova.fireDocumentEvent('pause')");
             }
         },
         resume: {
             event: "active",
             trigger: function () {
-                webview.executeJavascript("if (cordova) cordova.fireDocumentEvent('resume')");
+                webview.executeJavascript("if (typeof cordova !== 'undefined') cordova.fireDocumentEvent('resume')");
             }
         }
     };
@@ -68,7 +68,7 @@ function showWebInspectorInfo() {
         if (connectedInterface) {
             messageObj.htmlmessage =  "\n ip4:    " + connectedInterface.ipv4Address + ":" + port + "<br/> ip6:    " + connectedInterface.ipv6Address + ":" + port;
         } else {
-            messageObj.message = "";
+            messageObj.message = "Connect to the simulator's IP on port: " + port;
         }
         messageObj.dialogType = 'JavaScriptAlert';
         overlayWebView.showDialog(messageObj);
@@ -79,6 +79,9 @@ var _self = {
     start: function (url) {
         var callback,
             showUrlCallback;
+
+        // log Cordova framework version (which should match JS version)
+        console.log('Apache Cordova native platform version ' + config.cordovaVersion + ' is starting.');
 
         // Set up the controller WebView
         controllerWebView.init(config);
@@ -111,6 +114,14 @@ var _self = {
 
             if (config.enableDiskCache) {
                 qnx.webplatform.nativeCall('webview.setEnableDiskCache', webview.id, 'true');
+            }
+
+            if (config.useSpatialNavigation) {
+                var _webview = webview.getWebViewObj();
+                if ("spatialNavigation" in _webview) {
+                    _webview.spatialNavigation = true;
+                    _webview.pointerInteractionMode = false;
+                }
             }
 
             // Workaround for executeJavascript doing nothing for the first time

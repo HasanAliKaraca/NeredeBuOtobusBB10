@@ -1,7 +1,6 @@
 -package
--debugToken
-C:\Users\ali\.cordova\blackberry10debugtoken.bar
--devMode
+-buildId
+0
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\device\bb10app.bar
 -barVersion
 1.5
@@ -65,7 +64,7 @@ C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons_white\ic_browser.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons_white\ic_info.png
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\images\icons_white\ic_rotate.png
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\App.js
+C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\app.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\App.min.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\App.min.js.map
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\Application.js
@@ -95,15 +94,11 @@ C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\dist\app.complete.bundle.min.js.map
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\lib\bbui-min.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\js\lib\jquery-1.9.1.min.js
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.app\www\client.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.connection\www\client.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.invoke\www\btoa.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.invoke\www\client.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.invoke.card\www\btoa.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.invoke.card\www\client.js
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.ui.cover\www\client.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.ui.dialog\www\client.js
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\com.blackberry.ui.toast\www\client.js
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\jnext\auth.txt
-C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\jnext\libjpps.so
 C:\Users\ali\Source\Repos\NeredeBuOtobusBB10\NeredeBuOtobus\platforms\blackberry10\build\src\plugins\jnext\libutils.so

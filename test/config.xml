@@ -1,0 +1,22 @@
+<widget id="NeredeBuOtobus" 
+  xmlns:cdv="http://cordova.apache.org/ns/1.0" 
+  xmlns:rim="http://www.blackberry.com/ns/widgets" version="2.1.0.0" 
+  xmlns="http://www.w3.org/ns/widgets">
+  <name>Nerede bu otobüs?</name>
+  <rim:splash src="images/splash-1280x768.png"/>
+  <rim:splash src="images/splash-1280x720.png"/>
+  <rim:splash src="images/splash-720x720.png"/>
+  <description>Resmi olmayan, Ankara için EGO uygulamasıdır</description>
+  <content src="index.html"/>
+  <icon src="images/icon.png"/>
+  <access uri="http://www.ego.gov.tr/" subdomains="true"/>
+  <access uri="http://jsonip.com" subdomains="true"/>
+  <preference name="AutoHideSplashScreen" value="true"/>
+  <preference name="ChildBrowser" value="enable"/>
+  <preference name="DiskCache" value="disable"/>
+  <preference name="HideKeyboardFormAccessoryBar" value="disable"/>
+  <preference name="Orientation" value="default"/>
+  <preference name="PopupBlocker" value="disable"/>
+  <preference name="WebSecurity" value="enable"/>
+  <author rim:copyright="Copyright 2014 Hasan Ali Karaca" href="http://www.hasanalikaraca.com/">Hasan Ali Karaca</author>
+</widget>

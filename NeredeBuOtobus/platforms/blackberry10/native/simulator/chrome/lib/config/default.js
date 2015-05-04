@@ -23,6 +23,8 @@ module.exports = {
     configXML: "config.xml",
     configXMLDoc: null,
 
+    cordovaVersion: "v2.2.0.15",
+
     backButtonBehavior: "back",
     customHeaders: {},
     version: "1.0.0",

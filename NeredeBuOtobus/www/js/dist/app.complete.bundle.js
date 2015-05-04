@@ -337,41 +337,14 @@ var Application = {
 
 var Connection = {
     doAjaxReq: function (data) {
-        var parameterObject = {
-            fnc: "DuraktanGeçecekOtobüsler",
-            prm: "",
-            hat: data.hatNo,
-            durak: data.durakNo
-        }
 
-        if (this.myIp == null && this.myIp == "") {
-            this.loadMyIp();
+        var hatNo = data.hatNo;
+        var durakNo = data.durakNo;
 
-            var timeStamp = Date.now();
-
-            //10sec wait
-            while (Date.now - timeStamp < 10000) {
-
-            }
-            if (this.myIp == null && this.myIp == "") {
-
-                alert("şu anki ipiniz alınamadığı için işlem gerçekleştirilemiyor!");
-                return;
-            }
-
-        }
-
-        var ajaxCID = Connection.myIp;
-        var ajaxAPP = 'OtobusNerede';
-
-        var url = "http://www.ego.gov.tr/mobil/mapToDo.asp";
-
-        url = url + "?AjaxSid=" + encodeURI(Math.random()) + "&AjaxCid=" + encodeURI(ajaxCID) + "&AjaxApp=" + encodeURI(ajaxAPP) + "&AjaxLog=True";
+        var url = "http://www.ego.gov.tr/otobusnerede?durak_no=" + durak + "&hat_no=" + hatNo;
 
         $.ajax({
-            type: "POST",
             url: url,
-            data: parameterObject,
             success: Connection.returnData,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.warn("error: " + errorThrown);
@@ -382,9 +355,10 @@ var Connection = {
             }
         });
 
+
+
     },
-    returnData: function (data, textStatus, jqXHR) {
-        //console.log("ajax success");
+    returnData: function (data, textStatus, jqXHR) {       
 
         try {
             //gelen data yanlış şekillendirilmiş: "{'Err': '','Msg': '','Row': 0,'Tbl': []}"
@@ -421,8 +395,9 @@ var Connection = {
 
             Connection.myIp = ip;
         });
-    }
+    },
 };
+
 
 ///#source 1 1 /js/ConnectionStatus.js
 
