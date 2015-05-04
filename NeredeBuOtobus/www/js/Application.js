@@ -39,7 +39,7 @@ var Application = {
                 $("#txtHatNo").val(localStorage.getItem("lastHatNo"));
                 $("#txtDurakNo").focus();
 
-                $("#txtDurakNo").keyup(function (event) {
+                $("#txtDurakNo").focusout(function (event) {
                     var durakNo = $("#txtDurakNo").val();
                     localStorage.setItem("lastDurakNo", durakNo);
                     if (event.keyCode == 13) {
@@ -47,10 +47,14 @@ var Application = {
                     }
                 });
 
-                $("#txtHatNo").keyup(function (event) {
+                $("#txtHatNo").focusout(function (event) {
                     var hatNo = $("#txtHatNo").val();
                     localStorage.setItem("lastHatNo", hatNo);
+                    if (event.keyCode == 13) {
+                        App.getBusInfo();
+                    }
                 });
+
 
 
             }

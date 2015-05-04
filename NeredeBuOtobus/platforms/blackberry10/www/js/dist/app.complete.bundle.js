@@ -27,10 +27,7 @@ var App = {
             return null;
         }
 
-        var hatNo = localStorage.getItem("lastHatNo");//$("#txtHatNo").val();
-
-        //localStorage.setItem("lastDurakNo", durakNo);
-        //localStorage.setItem("lastHatNo", hatNo);
+        var hatNo = localStorage.getItem("lastHatNo"); //$("#txtHatNo").val(); 
 
         var dataObject = { durakNo: durakNo, hatNo: hatNo };
         this.values = dataObject;
@@ -69,11 +66,10 @@ var App = {
 
 
 
-      //  Toast.regular('Yükleniyor..');
+        //  Toast.regular('Yükleniyor..');
     },
 
     showBusInfo: function (data) {
-
 
         var i,
 		listItem,
@@ -83,14 +79,14 @@ var App = {
 		dataList = document.getElementById('dataList');
 
         //hatNo girilmişse
-        if (this.values != null && this.values.hatNo != "") {
+        if (this.values != null && this.values.hatNo != "" && this.values.hatNo != null) {
 
             var hatNo = this.values.hatNo;
 
-            for (var i = 0; i < data.Row; i++) {
-                var record = data.Tbl[i];
+            for (var i = 0; i < data.length; i++) {
+                var record = data[i];
                 if (hatNo && hatNo != "undefined") {
-                    if (record.kodu !== hatNo) {
+                    if (record.hatNo !== hatNo) {
                         continue;
                     }
                 }
@@ -102,52 +98,30 @@ var App = {
 
             //hatNo girilmemişse
         else {
-            data.Tbl.forEach(function (o) {
+            data.forEach(function (o) {
                 createListItem(o);
                 items.push(listItem);
             });
         }
 
         //helper functions record=data.Tbl bir tablo objesi yani
-        function findKalanDk(record) {
-            var detay = record.detay;
-            var firstPos;
-            var lastPos;
-
-            if (detay.indexOf("<br />") != -1) {
-                firstPos = detay.indexOf("<br />") + 6;
-                lastPos = detay.lastIndexOf("<br />");
-            }
-            else if (detay.indexOf("<br/>") != -1) {
-                firstPos = detay.indexOf("<br/>") + 5;
-                lastPos = detay.lastIndexOf("<br/>");
-            }
-            else {
-                console.error("hata!! api de 'detay' parametresi değişmiş olabilir");
-            }
-
-            kalanDk = detay.substring(firstPos, lastPos);
-            return kalanDk;
-        };
         function createListItem(record) {
 
-            var kalanDk = findKalanDk(record);
+            //var kalanDk = findKalanDk(record);
             var tmpl =
                 "<li>" +
-                    "<h4>" + record.kodu + ", " + record.adi + "</h4>" +
+                    "<h4>" + record.hatNo + ", " + record.hatAd + "</h4>" +
                     "<label>" +
-                    record.detay +
+                    record.varisSure +
+                    "</label>" +
+                    "<br/>" +
+                    "<label>" +
+                    record.info +
                     "</label>" +
                 "</li>";
             tmpl += "<hr/>";
 
             listItem = tmpl;
-
-            // listItem = document.createElement('div');
-            // listItem.setAttribute('data-bb-type', 'item');
-            // listItem.setAttribute('data-bb-title', 'Hat No: ' + record.kodu);
-            // listItem.setAttribute('data-bb-accent-text', '');//sağdaki text
-            // listItem.innerHTML = kalanDk;
         };
 
         // Remove our waiting and refresh the list
@@ -188,7 +162,6 @@ var App = {
 
         Timer.start();
     },
-
 
 };
 ///#source 1 1 /js/Application.js
@@ -233,7 +206,7 @@ var Application = {
                 $("#txtHatNo").val(localStorage.getItem("lastHatNo"));
                 $("#txtDurakNo").focus();
 
-                $("#txtDurakNo").keyup(function (event) {
+                $("#txtDurakNo").focusout(function (event) {
                     var durakNo = $("#txtDurakNo").val();
                     localStorage.setItem("lastDurakNo", durakNo);
                     if (event.keyCode == 13) {
@@ -241,10 +214,14 @@ var Application = {
                     }
                 });
 
-                $("#txtHatNo").keyup(function (event) {
+                $("#txtHatNo").focusout(function (event) {
                     var hatNo = $("#txtHatNo").val();
                     localStorage.setItem("lastHatNo", hatNo);
+                    if (event.keyCode == 13) {
+                        App.getBusInfo();
+                    }
                 });
+
 
 
             }
@@ -337,41 +314,14 @@ var Application = {
 
 var Connection = {
     doAjaxReq: function (data) {
-        var parameterObject = {
-            fnc: "DuraktanGeçecekOtobüsler",
-            prm: "",
-            hat: data.hatNo,
-            durak: data.durakNo
-        }
 
-        if (this.myIp == null && this.myIp == "") {
-            this.loadMyIp();
+        var hatNo = data.hatNo || "";
+        var durakNo = data.durakNo;
 
-            var timeStamp = Date.now();
-
-            //10sec wait
-            while (Date.now - timeStamp < 10000) {
-
-            }
-            if (this.myIp == null && this.myIp == "") {
-
-                alert("şu anki ipiniz alınamadığı için işlem gerçekleştirilemiyor!");
-                return;
-            }
-
-        }
-
-        var ajaxCID = Connection.myIp;
-        var ajaxAPP = 'OtobusNerede';
-
-        var url = "http://www.ego.gov.tr/mobil/mapToDo.asp";
-
-        url = url + "?AjaxSid=" + encodeURI(Math.random()) + "&AjaxCid=" + encodeURI(ajaxCID) + "&AjaxApp=" + encodeURI(ajaxAPP) + "&AjaxLog=True";
+        var url = "http://www.ego.gov.tr/otobusnerede?durak_no=" + durakNo + "&hat_no=" + hatNo;
 
         $.ajax({
-            type: "POST",
             url: url,
-            data: parameterObject,
             success: Connection.returnData,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.warn("error: " + errorThrown);
@@ -382,25 +332,22 @@ var Connection = {
             }
         });
 
+
+
     },
     returnData: function (data, textStatus, jqXHR) {
-        //console.log("ajax success");
+        var resultData = "";
 
         try {
-            //gelen data yanlış şekillendirilmiş: "{'Err': '','Msg': '','Row': 0,'Tbl': []}"
-            //bu datada parse edebilmek için ' karakterleri " döndürülmeli.
-            var correctedString = data.replace(/'/g, '"');
+            //html dönecek otobusnerede tablosunu al
 
-            if (correctedString) {
-                //string to json
-                var jsonObject = $.parseJSON(correctedString);
+            if (data) {
+                resultData = Connection.parseHtml(data);
             }
             else {
                 console.log("correctedString: " + correctedString);
                 throw "Data boş döndü!";
             }
-
-
         } catch (e) {
             // alert(e);
             console.warn(e);
@@ -408,8 +355,56 @@ var Connection = {
             return null;
         }
 
-        App.showBusInfo(jsonObject);
+        App.showBusInfo(resultData);
 
+    },
+
+    parseHtml: function (data) {
+        var resultArr = [];
+
+        if (!data) {
+            return resultArr;
+        }
+
+        var html = $.parseHTML(data);
+        var table = $(html).find(".otobusneredemobil"); //otobusnerede
+        
+
+        var tbody = $(table).find("tbody"); //:nth-child(2)
+        var trList = $(tbody).find("tr");
+
+        for (var i = 0; i < trList.length; i = i + 3) {
+
+            var busObj = {
+                hatNo: '',
+                hatAd: '',
+                varisSure: '',
+                info: ''
+            };
+
+            var hatRow = trList[i];
+
+            busObj.hatNo = $(hatRow).find("th").text().trim();  //busObj.hatNo = $(hatRow).find("td:nth-child(1)").text().trim();
+
+            busObj.hatAd = $(hatRow).find("td").text().trim();  //busObj.hatAd = $(hatRow).find("td:nth-child(2)").text().trim();
+
+
+            var infoRow = trList[i + 1];
+
+            busObj.varisSure = $(infoRow).find("h6:nth-child(2)").text().trim(); //busObj.varisSure = $(infoRow).find("i b").text().trim().replace("Tahmini Varış Süresi: ", "");
+                //.clone()    //clone the element
+                //.children() //select all the children
+                //.remove()   //remove all the children
+                //.end()  //again go back to selected element
+                //.text().trim().replace("Tahmini Varış Süresi: ", "");
+
+            //take just first text not childs'
+            busObj.info = $(infoRow).find("th h6:nth-child(3)").text().trim(); //busObj.info = $(infoRow).find("i").clone().children().remove().end().text().trim();
+
+            resultArr.push(busObj);
+        }
+
+        return resultArr;
     },
 
     myIp: "",
@@ -421,8 +416,9 @@ var Connection = {
 
             Connection.myIp = ip;
         });
-    }
+    },
 };
+
 
 ///#source 1 1 /js/ConnectionStatus.js
 

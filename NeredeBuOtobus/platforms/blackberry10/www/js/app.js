@@ -26,10 +26,7 @@ var App = {
             return null;
         }
 
-        var hatNo = localStorage.getItem("lastHatNo");//$("#txtHatNo").val();
-
-        //localStorage.setItem("lastDurakNo", durakNo);
-        //localStorage.setItem("lastHatNo", hatNo);
+        var hatNo = localStorage.getItem("lastHatNo"); //$("#txtHatNo").val(); 
 
         var dataObject = { durakNo: durakNo, hatNo: hatNo };
         this.values = dataObject;
@@ -68,11 +65,10 @@ var App = {
 
 
 
-      //  Toast.regular('Yükleniyor..');
+        //  Toast.regular('Yükleniyor..');
     },
 
     showBusInfo: function (data) {
-
 
         var i,
 		listItem,
@@ -82,14 +78,14 @@ var App = {
 		dataList = document.getElementById('dataList');
 
         //hatNo girilmişse
-        if (this.values != null && this.values.hatNo != "") {
+        if (this.values != null && this.values.hatNo != "" && this.values.hatNo != null) {
 
             var hatNo = this.values.hatNo;
 
-            for (var i = 0; i < data.Row; i++) {
-                var record = data.Tbl[i];
+            for (var i = 0; i < data.length; i++) {
+                var record = data[i];
                 if (hatNo && hatNo != "undefined") {
-                    if (record.kodu !== hatNo) {
+                    if (record.hatNo !== hatNo) {
                         continue;
                     }
                 }
@@ -101,52 +97,30 @@ var App = {
 
             //hatNo girilmemişse
         else {
-            data.Tbl.forEach(function (o) {
+            data.forEach(function (o) {
                 createListItem(o);
                 items.push(listItem);
             });
         }
 
         //helper functions record=data.Tbl bir tablo objesi yani
-        function findKalanDk(record) {
-            var detay = record.detay;
-            var firstPos;
-            var lastPos;
-
-            if (detay.indexOf("<br />") != -1) {
-                firstPos = detay.indexOf("<br />") + 6;
-                lastPos = detay.lastIndexOf("<br />");
-            }
-            else if (detay.indexOf("<br/>") != -1) {
-                firstPos = detay.indexOf("<br/>") + 5;
-                lastPos = detay.lastIndexOf("<br/>");
-            }
-            else {
-                console.error("hata!! api de 'detay' parametresi değişmiş olabilir");
-            }
-
-            kalanDk = detay.substring(firstPos, lastPos);
-            return kalanDk;
-        };
         function createListItem(record) {
 
-            var kalanDk = findKalanDk(record);
+            //var kalanDk = findKalanDk(record);
             var tmpl =
                 "<li>" +
-                    "<h4>" + record.kodu + ", " + record.adi + "</h4>" +
+                    "<h4>" + record.hatNo + ", " + record.hatAd + "</h4>" +
                     "<label>" +
-                    record.detay +
+                    record.varisSure +
+                    "</label>" +
+                    "<br/>" +
+                    "<label>" +
+                    record.info +
                     "</label>" +
                 "</li>";
             tmpl += "<hr/>";
 
             listItem = tmpl;
-
-            // listItem = document.createElement('div');
-            // listItem.setAttribute('data-bb-type', 'item');
-            // listItem.setAttribute('data-bb-title', 'Hat No: ' + record.kodu);
-            // listItem.setAttribute('data-bb-accent-text', '');//sağdaki text
-            // listItem.innerHTML = kalanDk;
         };
 
         // Remove our waiting and refresh the list
@@ -187,6 +161,5 @@ var App = {
 
         Timer.start();
     },
-
 
 };
